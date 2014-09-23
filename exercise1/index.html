@@ -38,24 +38,24 @@
 
   <p>Next to breaking the flow or keeping it, there are other characteristics with
   <!-- You could change the strong into a DIV and see the style attribute has a correct syntax -->
-  <strong style="width: 1000px; height: 1000px">inline</strong> or <strong>block</strong>. For instance.
+  <div style="width: 1000px; height: 1000px">inline</div> or <strong>block</strong>. For instance
   an inline element does not have a width or height. Check the element 'inline' in the source of this document. It has a large width and height, but
   the browser did not respect them.</p>
 
   <p>The most basic block element with no additional styling is the <code>&lt;div/&gt;</code>. The most basic inline element is the <code>&lt;span/&gt;</code>.</p>
 
   <style>
-    .reversed-markup em { /* turn this into a P */
+    .reversed-markup p { /* turn this into a P */
       display: block;
       margin: 1em 0;
       font-style: normal;
     }
-    .reversed-markup h1 { /* turn this into a ABBR */
+    .reversed-markup abbr { /* turn this into a ABBR */
       display: inline;
       font-size: 1em;
       font-weight: normal;
     }
-    .reversed-markup p { /* turn this into a EM */
+    .reversed-markup em { /* turn this into a EM */
       display: inline;
       margin: 0;
       font-style: italic;
@@ -74,6 +74,35 @@
   <h2>Exercise</h2>
 
   <p>Study the source of this document. Try to make a list of the tags you know, and figure out if it is a block or inline element.</p>
+
+    <p>Study the source of this document. Try to make a list of the tags you know, and figure out if it is a block or inline element.</p>
+
+    <ul>
+        <li>html 5 tags like: header, footer, article, aside are semantic elements for a div so block</li>
+        <li>ul is bloc</li>
+        <li>Lists elements li, lu are bloc</li>
+        <li>
+            <p>Tables elements like below have other display types</p>
+            <table>
+                <thead>
+                <th>header</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>cell</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <p>forms is block where inputs are inline-block</p>
+            <form>
+                Label: <input type="text" name="someInput"><br>
+            </form>
+        </li>
+        <li>Headers</li>
+    </ul>
+
 
 </article>
 
