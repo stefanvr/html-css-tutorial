@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Excercise 1</title>
+</head>
+<body>
+<article>
+  <header>
+    <h1>Excersice 1: Block / Inline</h1>
+  </header>
+
+  <p>This excercise is about semantic markup. This file is built up using several different <abbr title="Hyper Text Markup Language">HTML</abbr> tags.
+  These tags have some default configuration, made up by the <abbr title="Hyper Text Markup Language">HTML</abbr> Standards organisation and/or browsers.
+  </p>
+
+  <p>It is important to know that these properties can be manipulated using <abbr title="Cascading Style Sheets">CSS</abbr>.
+  The most important aspect is the way a element is displayed. This is the way an element controls the flow of content
+  within the <abbr title="Hyper Text Markup Language">HTML</abbr> document.</p>
+
+  <p>There are a lot of different tags to explain the semantics of a document, like:</p>
+
+  <ul>
+    <li>Paragraphs</li>
+    <li>Emphasis</li>
+    <li>Lists</li>
+    <li>Tables</li>
+    <li>Images</li>
+    <li>Headers</li>
+  </ul>
+
+  <p>As you can see, lists break the flow text content, and take the whole width of a page. The next paragraph is shown underneath it.
+  The same applies with paragraphs and headers.</p>
+
+  <p>Other elements can be used within the flow of text. Like <em>Emphasis</em>, or an image <img src="http://lorempixel.com/60/50/" alt="random image"/>. A sentence
+  can be continuated, and it does not break the "flow"</p>
+
+  <p>In <abbr title="Cascading Style Sheets">CSS</abbr> this is called <code>display: block;</code> for elements that take full with (like paragraphs and headers)
+  or <code>display: inline;</code>. For elements that can be used within a sentence.</p>
+
+  <p>Next to breaking the flow or keeping it, there are other characteristics with
+  <!-- You could change the strong into a DIV and see the style attribute has a correct syntax -->
+  <strong style="width: 1000px; height: 1000px">inline</strong> or <strong>block</strong>. For instance.
+  an inline element does not have a width or height. Check the element 'inline' in the source of this document. It has a large width and height, but
+  the browser did not respect them.</p>
+
+  <p>The most basic block element with no additional styling is the <code>&lt;div/&gt;</code>. The most basic inline element is the <code>&lt;span/&gt;</code>.</p>
+
+  <style>
+    .reversed-markup em { /* turn this into a P */
+      display: block;
+      margin: 1em 0;
+      font-style: normal;
+    }
+    .reversed-markup h1 { /* turn this into a ABBR */
+      display: inline;
+      font-size: 1em;
+      font-weight: normal;
+    }
+    .reversed-markup p { /* turn this into a EM */
+      display: inline;
+      margin: 0;
+      font-style: italic;
+    }
+  </style>
+
+  <section class="reversed-markup">
+    <em>But because these flow properties can be manipulated, you could create a markup with totally different semantics,
+      and change its appearance using <h1 title="Cascading Style Sheets">CSS</h1>
+      this way you could use an <p>Emphasis</p> tag to display as paragraph, and vise-versa.</em>
+  </section>
+
+  <p>There are of-course more variants than inline or block. An image for example is not a pure 'inline' element, since it <em>can</em> have a width and height.
+  this is an <code>inline-block</code></p>
+
+  <h2>Excercise</h2>
+
+  <p>Study the source of this document. Try to make a list of the tags you know, and figure out if it is a block or inline element.</p>
+
+</article>
+
+</body>
+</html>
