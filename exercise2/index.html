@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>Exercise 2</title>
+</head>
+<body>
+<article>
+  <header>
+    <h1>Exercise 2: Boxmodel</h1>
+  </header>
+
+  <p>In the previous exercise we explored some element archetypes. This time we will look more into the <code>block</code> type.</p>
+  <p>The <code>block</code> type has a certain "box model"</p>
+
+  <p>You can see it as layers around the content of the element. From outside to inside:</p>
+  <ol>
+    <li>Margin</li>
+    <li>Border</li>
+    <li>Padding</li>
+  </ol>
+
+  <style>
+    .margin {
+      border: 1px dotted black;
+      background-color: white;
+      line-height: 1em;
+      width: 50%;
+    }
+    .border {
+      background-color: black;
+      color: white;
+      margin: 0 1em 1em 1em;
+      border: 1px solid transparent; /* Hmm what is this?? */
+    }
+    .padding {
+      background-color: white;
+      color: black;
+      margin: 0 1em 1em 1em;
+      border: 1px solid transparent; /* Hmm what is this?? */
+    }
+    .content {
+      background-color: yellow;
+      margin: 0 1em 1em 1em;
+    }
+  </style>
+
+  <div class="margin">
+    Margin
+    <div class="border">
+      Border
+      <div class="padding">
+        Padding
+        <div class="content">
+          Content
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>When you set an element's width, you are setting the width of the <strong>content</strong> part. So if for instance, you set the width to 50%, and add a border and padding, the outer size of the element will exceed the 50%.</p>
+  <p>In the earlier days of HTML there was a difference between Internet Explorer and "other browsers" (Netscape, Opera). In Internet Explorer, the width of an element was the width including padding and border, so the padding and border
+  subtracted from the width of the content.</p>
+  <p>Nowadays all browsers adhere that the defined width is the width of the content, and padding and border widths are added on top of that. (same applies to height by the way)</p>
+
+  <h1>Margin</h1>
+
+  <p>Margin is something special. It indicates how much space there should be between an element and another element. But only for elements with "content". And by that I mean something that gives the element a dimension.</p>
+  <p>Let's check out that styled box up there. It is a stack of boxes, each with a label (Margin, Border, Padding and Content). The content is in the top of each box. Then there is a box following the label, and then no content.</p>
+  <p>So between the word "Content" and the paragraph under the box, no real content is in the page. To trigger the effect this causes on markup, check the source of this document and disable the transparent borders set on the <code>.border</code>
+  and <code>.padding</code> styling.</p>
+
+  <p>So what you see is that margin collapses to the maximum value of all margins combined. Another example:</p>
+
+  <style>
+    .example1 {
+      border: 1px dotted black;
+      display: inline-block;
+    }
+    .example1 .box {
+      display: block;
+      border: 2px solid red;
+      margin: 4em 1em 1em 1em;
+    }
+  </style>
+  <figure>
+    <div class="example1">
+      <div class="box">Box1</div>
+      <div class="box">Box2</div>
+      <div class="box">Box3</div>
+    </div>
+    <figcaption>Normal vertical stacked divs collapse the margin</figcaption>
+  </figure>
+
+  <style>
+    .example2 {
+      border: 1px dotted black;
+    }
+    /* 'Clearfix' ... google it :-) */
+    .example2:after {
+      content: ".";
+      clear: both;
+      display: block;
+      visibility: hidden;
+      height: 0;
+    }
+    .example2 .box {
+      display: block;
+      border: 2px solid red;
+      margin: 1em 4em 1em 1em;
+      float: left;
+    }
+  </style>
+  <figure>
+    <div class="example2">
+      <div class="box">Box1</div>
+      <div class="box">Box2</div>
+      <div class="box">Box3</div>
+    </div>
+    <figcaption>Horizontal block elements, using floats. They do not collapse the margin</figcaption>
+  </figure>
+
+  <style>
+    .example3 {
+      border: 1px dotted black;
+      display: inline-block;
+    }
+    .example3 .box {
+      display: inline-block;
+      border: 2px solid red;
+      margin: 1em 4em 1em 1em;
+    }
+  </style>
+  <figure>
+    <div class="example3">
+      <div class="box">Box1</div>
+      <div class="box">Box2</div>
+      <div class="box">Box3</div>
+    </div>
+    <figcaption>Horizontal inline-block elements. They do not collapse the margin</figcaption>
+  </figure>
+
+  <p>Why do certain elements collapse margin and others do not?</p>
+  <p>Well its all in the standards... <a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins">W3C Box model, 8.3.1 Collapsing margins</a></p>
+  <p>Another interesting link about Margins and Floats: <a href="http://www.fiveminuteargument.com/blog/margin-after-float">Margin after float</a></p>
+
+</article>
+</body>
+</html>
