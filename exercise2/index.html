@@ -163,11 +163,31 @@
 
   <h2>Exercise</h2>
 
-  <p>Can you explain why the margins collapse when transparent borders are disabled?</p>
+  <h3>Can you explain why the margins collapse when transparent borders are disabled?</h3>
 
-  <p>Why do certain elements collapse margin and others do not?</p>
+    1. If a block container box (e.g "border" div) has a block-level box inside it (e.g "padding" div), then it's forced
+    to have only block-level boxes inside it. As a result the labels become anonymous box.</br>
+    2. When disabling the transparent borders, there are is no content, padding or margin and the margins collapse.
 
-  <h2>Background info</h2>
+  <h3>Why do certain elements collapse margin and others do not?</h3>
+
+    Only when the rules for collapsing borders are met it happens, in short: no border and/or margin for box elements
+
+  <h3>Personal notes</h3>
+
+    - anonymous box: http://www.w3.org/TR/CSS21/visuren.html#block-boxes</br>
+    - padding has same effect on collapsing border as the transparent border in question 1</br>
+    - margin only for block-level box elements (inline element does not have a width or height, heigth being the key)</br>
+    - collapse -> = max of bottom+top margin of stacked items</br>
+    - float -> clear -> below</br>
+    - padding:</br>
+        Negative padding values are invalid.</br>
+        Padding is never collapsed.</br>
+        Margin values are not applied to inline elements, but padding values are.</br></br>
+
+    - other ref: http://www.w3.org/wiki/The_CSS_layout_model_-_boxes_borders_margins_padding#Collapsing_margins</br>
+
+    <h2>Background info</h2>
 
   <p>Well its all in the standards... <a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins">W3C Box model, 8.3.1 Collapsing margins</a></p>
   <p>Another interesting link about Margins and Floats: <a href="http://www.fiveminuteargument.com/blog/margin-after-float">Margin after float</a></p>
