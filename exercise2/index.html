@@ -64,11 +64,8 @@
   <h1>Margin</h1>
 
   <p>Margin is something special. It indicates how much space there should be between an element and another element. But only for elements with "content". And by that I mean something that gives the element a dimension.</p>
-  <p>Let's check out that styled box up there. It is a stack of boxes, each with a label (Margin, Border, Padding and Content). The content is in the top of each box. Then there is a box following the label, and then no content.</p>
-  <p>So between the word "Content" and the paragraph under the box, no real content is in the page. To trigger the effect this causes on markup, check the source of this document and disable the transparent borders set on the <code>.border</code>
-  and <code>.padding</code> styling.</p>
 
-  <p>So what you see is that margin collapses to the maximum value of all margins combined. Another example:</p>
+  <p>Example:</p>
 
   <style>
     .example1 {
@@ -138,7 +135,40 @@
     <figcaption>Horizontal inline-block elements. They do not collapse the margin</figcaption>
   </figure>
 
+
+  <p>Let's check out that styled box again:</p>
+
+  <div class="margin">
+    Margin
+    <div class="border">
+      Border
+      <div class="padding">
+        Padding
+        <div class="content">
+          Content
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <p> It is a stack of boxes, each with a label (Margin, Border, Padding and Content). The content is in the top of
+        each box. Then there is a box following the label, and then no content.</p>
+
+  <p>So between the word "Content" and the paragraph under the box, no real content is in the page. To trigger the
+        effect this causes on markup, check the source of this document and disable the transparent borders set on the
+        <code>.border</code>
+        and <code>.padding</code> styling.</p>
+
+  <p>So what you see is that margin collapses to the maximum value of all margins combined.</p>
+
+  <h2>Exercise</h2>
+
+  <p>Can you explain why the margins collapse when transparent borders are disabled?</p>
+
   <p>Why do certain elements collapse margin and others do not?</p>
+
+  <h2>Background info</h2>
+
   <p>Well its all in the standards... <a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins">W3C Box model, 8.3.1 Collapsing margins</a></p>
   <p>Another interesting link about Margins and Floats: <a href="http://www.fiveminuteargument.com/blog/margin-after-float">Margin after float</a></p>
 
